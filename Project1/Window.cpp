@@ -1,10 +1,12 @@
 // Window.cpp
 #include "Window.h"
+#include <SDL_ttf.h>
 
 // Le constructeur de la classe Window est appelé lorsqu'une instance de Window est créée.
 // Il initialise la bibliothèque SDL2, crée une fenêtre et un rendu (renderer) associé.
 Window::Window(const char* title, int width, int height) {
     SDL_Init(SDL_INIT_VIDEO);  // Initialise la bibliothèque SDL2 pour la gestion graphique.
+    TTF_Init();
     
     // Crée une fenêtre avec le titre spécifié, les dimensions (largeur et hauteur) et le drapeau SDL_WINDOW_SHOWN.
     window = SDL_CreateWindow(title, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, SDL_WINDOW_SHOWN);
@@ -19,6 +21,7 @@ Window::Window(const char* title, int width, int height) {
 Window::~Window() {
     SDL_DestroyRenderer(renderer);  // Libère le rendu.
     SDL_DestroyWindow(window);      // Libère la fenêtre.
+    TTF_Quit();                     // Quitte la bibliothèque SDL2_ttf.
     SDL_Quit();                     // Quitte la bibliothèque SDL2.
 }
 
