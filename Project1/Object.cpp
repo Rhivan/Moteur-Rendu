@@ -17,3 +17,15 @@ void Object::Draw() {
 void Object::MoveRight(int distance) {
 	rect.x += distance;
 }
+
+void Object::MoveLeft(int distance) {
+	rect.x -= distance;
+}
+
+void Object::MoveUp(int distance) {
+	rect.y -= distance;
+}
+
+void Object::MoveDown(int distance) {
+	rect.y += distance;
+}

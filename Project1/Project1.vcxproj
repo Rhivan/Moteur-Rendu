@@ -24,6 +24,7 @@
     <ProjectGuid>{b89907fe-a7ac-4835-ac53-30569269949e}</ProjectGuid>
     <RootNamespace>Project1</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Moteur-rendu</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -71,8 +72,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\Users\Utilisateur\Documents\GitHub\Project1\SDL2\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\Utilisateur\Documents\GitHub\Project1\SDL2\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Users\apreynat\Documents\GitHub\Moteur-Rendu\Project1\SDL2\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\apreynat\Documents\GitHub\Moteur-Rendu\Project1\SDL2\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
