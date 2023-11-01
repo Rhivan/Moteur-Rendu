@@ -4,7 +4,7 @@
 #include <SDL.h>
 #include <iostream>
 #include <SDL_ttf.h>
-
+#include "Grid.h"
 
 using namespace std;
 
@@ -14,50 +14,54 @@ int main(int argc, char* argv[]) {
 
     Object rectangle(renderer, 100, 100, 200, 100);
 
+    Grid grid(renderer);
+
     bool quit = false;
     SDL_Event event;
 
     float speed = 100.0f;
 
-    Uint32 lastTime;
-    Uint32 beginTime;
+    Uint64 beginTime;
 
     int fps = 0;
-    int count = 0;
 
-    Uint32 start = SDL_GetTicks();
+    Uint64 start = SDL_GetPerformanceCounter();
 
+    Uint64 startTime = SDL_GetPerformanceCounter();
+    Uint64 lastTime = startTime;
+    int frameCount = 0;
 
     while (!quit) {
         //STARTLOOP
 
-        beginTime = SDL_GetTicks();
+        beginTime = SDL_GetPerformanceCounter();
+        Uint64 currentTime = SDL_GetPerformanceCounter();
+        int deltaTime = (int)(currentTime - lastTime) / SDL_GetPerformanceFrequency();
+
+        float moveDistance = speed * (deltaTime / 1000.0f);
+
 
         //EVENT
         while (SDL_PollEvent(&event)) {
-
-            
-            
-
             if (event.type == SDL_QUIT) {
-                quit = true; 
+                quit = true;
             }
             else if (event.type == SDL_KEYDOWN) {
                 if (event.key.keysym.sym == SDLK_ESCAPE) {
-                    quit = true; 
+                    quit = true;
                 }
                 else if (event.key.keysym.sym == SDLK_RIGHT) {
-                    //rectangle.MoveRight(speed * (deltaTime / 1000.0f));
+                    rectangle.MoveRight(moveDistance);
                 }
                 else if (event.key.keysym.sym == SDLK_LEFT) {
-					rectangle.MoveRight(-10); 
-				}
+                    rectangle.MoveRight(-10);
+                }
                 else if (event.key.keysym.sym == SDLK_UP) {
                     rectangle.MoveUp(10);
                 }
                 else if (event.key.keysym.sym == SDLK_DOWN) {
-					rectangle.MoveDown(10);
-				}
+                    rectangle.MoveDown(10);
+                }
             }
         }
         //UPDATE
@@ -67,22 +71,26 @@ int main(int argc, char* argv[]) {
 
         rectangle.Draw();
 
+        grid.Draw();
+
         window.Present();
 
         SDL_Delay(1);
 
         //ENDLOOP
-        lastTime = SDL_GetTicks();
 
-        Uint32 deltaTime = lastTime - beginTime;
+        frameCount++;
 
-        fps++;
+        
+        
 
-        if (SDL_GetTicks() - start >= 1000) {
-			start = SDL_GetTicks();
-			cout << fps << endl;
-			fps = 0;
-		}            
+        if (deltaTime >= 1) {
+            int fps = frameCount / deltaTime;
+            cout << "FPS: " << fps << endl;
+
+            frameCount = 0;
+            lastTime = currentTime;
+        }
     }
     return 0;
 }

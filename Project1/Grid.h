@@ -1,34 +1,10 @@
-#include <vector>
-#include "Cell.h"
-
-using namespace std;
+#include <SDL.h>
 
 class Grid {
 public:
+    Grid(SDL_Renderer* renderer);
+    void Draw();
 
-    int rows;
-    int cols;
-
-    Grid(int numRows, int numCols);
-    Grid(vector<vector<int>>& setup);
-
-    void generateRandomCell();
-    void updateEmptyCells();
-    void updateMergedCells();
-    void display();
-    void checkGameOver();
-    bool isGameOver();
-    void clearCheckGameOver();
-
-    vector<pair<int, int>> emptyCells;
-
-    vector<int> listGameover;
-
-    vector<vector<Cell>> grid;
-
-    void initializeEmptyCells();
 private:
-    
+    SDL_Renderer* renderer;
 };
-
-
