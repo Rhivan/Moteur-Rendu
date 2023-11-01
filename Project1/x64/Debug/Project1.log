@@ -1,3 +1,5 @@
-﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: Le répertoire intermédiaire (x64\Debug\) contient des fichiers partagés provenant d'un autre projet (Project1.vcxproj). Cela peut entraîner un comportement de nettoyage et de regénération incorrect.
+﻿E:\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: Le répertoire intermédiaire (x64\Debug\) contient des fichiers partagés provenant d'un autre projet (Project1.vcxproj). Cela peut entraîner un comportement de nettoyage et de regénération incorrect.
   main.cpp
-  Project1.vcxproj -> C:\Users\apreynat\Documents\GitHub\Moteur-Rendu\x64\Debug\Moteur-rendu.exe
+  Window.cpp
+  Génération de code en cours...
+  Project1.vcxproj -> C:\Users\valen\Documents\GitHub\Moteur-Rendu\x64\Debug\Moteur-rendu.exe
