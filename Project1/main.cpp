@@ -84,6 +84,5 @@ int main(int argc, char* argv[]) {
 			fps = 0;
 		}            
     }
-
     return 0;
 }
