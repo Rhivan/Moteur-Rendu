@@ -1,13 +1,13 @@
-#include "Grid.h"
+#include "Data_Grid.h"
 
 class Move
 {
 public:
 
-	void moveLeft(Grid& grid);
-	void moveRight(Grid& grid);
-	void moveUp(Grid& grid);
-	void moveDown(Grid& grid);
+	void moveLeft(Data_Grid& grid);
+	void moveRight(Data_Grid& grid);
+	void moveUp(Data_Grid& grid);
+	void moveDown(Data_Grid& grid);
 	bool moved = false;
 
 };

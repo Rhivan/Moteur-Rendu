@@ -10,22 +10,6 @@ Object::Object(SDL_Renderer* renderer, int x, int y, int width, int height)
 }
 
 void Object::Draw() {
-	SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-	SDL_RenderFillRect(renderer, &rect);
-}
-
-void Object::MoveRight(int distance) {
-	rect.x += distance;
-}
-
-void Object::MoveLeft(int distance) {
-	rect.x -= distance;
-}
-
-void Object::MoveUp(int distance) {
-	rect.y -= distance;
-}
-
-void Object::MoveDown(int distance) {
-	rect.y += distance;
+	SDL_RenderDrawRect(renderer, &rect); // Dessine le rectangle creux.
+	SDL_SetRenderDrawColor(renderer, 255,255, 255, 255);
 }

@@ -33,17 +33,17 @@
     <ClCompile Include="Cell.cpp">
       <Filter>Fichiers sources\Game</Filter>
     </ClCompile>
-    <ClCompile Include="Grid.cpp">
-      <Filter>Fichiers sources\Game</Filter>
-    </ClCompile>
     <ClCompile Include="Move.cpp">
       <Filter>Fichiers sources\Game</Filter>
     </ClCompile>
     <ClCompile Include="Test.cpp">
       <Filter>Fichiers sources\Game</Filter>
     </ClCompile>
-    <ClCompile Include="main1.cpp">
-      <Filter>Fichiers sources</Filter>
+    <ClCompile Include="textureRenderer.cpp">
+      <Filter>Fichiers sources\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Data_Grid.cpp">
+      <Filter>Fichiers sources\Game</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -56,14 +56,19 @@
     <ClInclude Include="Cell.h">
       <Filter>Fichiers sources\Game</Filter>
     </ClInclude>
-    <ClInclude Include="Grid.h">
-      <Filter>Fichiers sources\Game</Filter>
-    </ClInclude>
     <ClInclude Include="Move.h">
       <Filter>Fichiers sources\Game</Filter>
     </ClInclude>
     <ClInclude Include="Test.h">
       <Filter>Fichiers sources\Game</Filter>
     </ClInclude>
+    <ClInclude Include="Data_Grid.h">
+      <Filter>Fichiers sources\Game</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="textureRenderer.h">
+      <Filter>Fichiers sources\Render</Filter>
+    </None>
   </ItemGroup>
 </Project>
